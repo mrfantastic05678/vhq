@@ -22,12 +22,14 @@ export function MobileMenu() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
-            <Image
-              src="/logo.webp"
-              alt="Voice Of Holy Quran"
-              width={120}
-              height={60}
-            />
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/logo.webp"
+                alt="Voice Of Holy Quran"
+                width={120}
+                height={60}
+              />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -91,7 +93,7 @@ export function MobileMenu() {
             className="fixed inset-0 bg-black/50 backdrop-blur-sm"
             onClick={closeMenu}
           />
-          <div className="fixed top-16 left-0 right-0 bg-background border-b shadow-lg animate-slide-down">
+          <div className="fixed min-h-[calc(100vh-4rem)] top-16 left-0 right-0 bg-background border-b shadow-lg animate-slide-down">
             <nav className="container py-6 space-y-4">
               <Link
                 href="/"
@@ -128,16 +130,16 @@ export function MobileMenu() {
               >
                 Contact
               </Link>
-
-              <Link href="/enroll" className="pt-8 mt-6 border-t">
-                <Button
-                  className="w-full bg-primary hover:bg-primary/90"
-                  onClick={closeMenu}
-                >
-                  Start Free Trial
-                </Button>
-              </Link>
             </nav>
+
+            <Link href="/enroll" className="pt-2 mt-6 border-t">
+              <Button
+                className="w-full bg-primary hover:bg-primary/90"
+                onClick={closeMenu}
+              >
+                Start Free Trial
+              </Button>
+            </Link>
           </div>
         </div>
       )}
