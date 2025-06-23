@@ -34,9 +34,9 @@ export function StudentSuccessSection() {
                   <div className="absolute -bottom-2 -right-2 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
                     <Trophy className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                   </div>
-                  <div className="absolute -top-1 -left-1 flex">
+                  <div className="absolute -top-1 -left-1 sm:-top-2 sm:-left-2 flex">
                     {[...Array(3)].map((_, i) => (
-                      <Star key={i} className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-yellow-400 fill-yellow-400" />
+                      <Star key={i} className="w-4 h-4 sm:w-6 sm:h-6 text-yellow-400 fill-yellow-400" />
                     ))}
                   </div>
                 </div>
@@ -51,10 +51,6 @@ export function StudentSuccessSection() {
                       National Winner in the Australian Islamic Quiz Competition!
                     </span>
                   </p>
-                  <div className="flex items-center justify-center sm:justify-start gap-3 p-3 bg-gradient-to-r from-orange-50 to-yellow-50 rounded-lg border border-orange-200">
-                    <Trophy className="w-4 h-4 sm:w-5 sm:h-5 text-orange-600 flex-shrink-0" />
-                    <span className="text-orange-800 font-semibold text-sm">Australian Islamic Quiz Champion</span>
-                  </div>
                 </div>
               </div>
             </CardContent>
@@ -72,9 +68,9 @@ export function StudentSuccessSection() {
                   <div className="absolute -bottom-2 -right-2 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center shadow-lg">
                     <Award className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                   </div>
-                  <div className="absolute -top-1 -left-1 flex">
+                  <div className="absolute -top-1 -left-1 sm:-top-2 sm:-left-2 flex">
                     {[...Array(3)].map((_, i) => (
-                      <Star key={i} className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-yellow-400 fill-yellow-400" />
+                      <Star key={i} className="w-4 h-4 sm:w-6 sm:h-6 text-yellow-400 fill-yellow-400" />
                     ))}
                   </div>
                 </div>
@@ -89,10 +85,6 @@ export function StudentSuccessSection() {
                       2nd position in their school's Islamic Competition!
                     </span>
                   </p>
-                  <div className="flex items-center justify-center sm:justify-start gap-3 p-3 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border border-blue-200">
-                    <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 flex-shrink-0" />
-                    <span className="text-blue-800 font-semibold text-sm">School Islamic Competition</span>
-                  </div>
                 </div>
               </div>
             </CardContent>

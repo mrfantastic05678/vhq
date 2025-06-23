@@ -33,7 +33,7 @@ export default function CoursesPage() {
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
                   Comprehensive Quran & Arabic Courses
                 </h1>
-                <p className="max-w-[900px] text-muted-foreground md:text-xl text-center">
+                <p className="max-w-[960px] mx-auto text-muted-foreground md:text-xl text-center">
                   Choose from our wide range of Islamic education programs designed for students of all ages and levels.
                   Start your spiritual journey with expert guidance and authentic teaching methods.
                 </p>

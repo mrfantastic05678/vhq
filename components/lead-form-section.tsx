@@ -1,41 +1,52 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useEffect, useState } from "react"
-import { useSearchParams } from "next/navigation"
-import { Button } from "@/components/ui/button"
-import { Shield, CheckCircle, Award, Users, Globe, ArrowRight, Star, Clock, Trophy } from "lucide-react"
-import { coursesData } from "@/lib/courses-data"
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import {
+  Shield,
+  CheckCircle,
+  Award,
+  Users,
+  Globe,
+  ArrowRight,
+  Star,
+  Clock,
+  Trophy,
+} from "lucide-react";
+import { coursesData } from "@/lib/courses-data";
+import Link from "next/link";
 
 export function LeadFormSection() {
-  const searchParams = useSearchParams()
-  const [selectedCourse, setSelectedCourse] = useState("")
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const searchParams = useSearchParams();
+  const [selectedCourse, setSelectedCourse] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   // Get course from URL parameter
   useEffect(() => {
-    const courseParam = searchParams.get("course")
+    const courseParam = searchParams.get("course");
     if (courseParam) {
       // Find the course by slug and set the title as selected
-      const course = coursesData.find((c) => c.slug === courseParam)
+      const course = coursesData.find((c) => c.slug === courseParam);
       if (course) {
-        setSelectedCourse(course.title)
+        setSelectedCourse(course.title);
       }
     }
-  }, [searchParams])
+  }, [searchParams]);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
     // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    await new Promise((resolve) => setTimeout(resolve, 2000));
 
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-  }
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+  };
 
   if (isSubmitted) {
     return (
@@ -50,7 +61,8 @@ export function LeadFormSection() {
               🎉 Enrollment Successful!
             </h1>
             <p className="text-xl text-muted-foreground mb-6">
-              Thank you for choosing Voice of Holy Quran Academy! We're excited to begin this blessed journey with you.
+              Thank you for choosing Voice of Holy Quran Academy! We're excited
+              to begin this blessed journey with you.
             </p>
             <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 border shadow-sm mb-8">
               <h3 className="font-semibold text-lg mb-4">What happens next?</h3>
@@ -60,42 +72,50 @@ export function LeadFormSection() {
                     1
                   </div>
                   <p className="text-sm">
-                    Our academic advisor will contact you within 24 hours to schedule your free trial classes
+                    Our academic advisor will contact you within 24 hours to
+                    schedule your free trial classes
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-primary text-sm font-semibold mt-0.5">
                     2
                   </div>
-                  <p className="text-sm">We'll match you with the perfect tutor based on your preferences and goals</p>
+                  <p className="text-sm">
+                    We'll match you with the perfect tutor based on your
+                    preferences and goals
+                  </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-primary text-sm font-semibold mt-0.5">
                     3
                   </div>
                   <p className="text-sm">
-                    You'll receive login credentials and instructions for accessing our learning platform
+                    You'll receive instructions for how to access your classes
+                    and get started
                   </p>
                 </div>
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={() => (window.location.href = "/")}>
-                Return to Home
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary text-primary hover:bg-primary hover:text-white"
-                onClick={() => (window.location.href = "/courses")}
-              >
-                Explore More Courses
-              </Button>
+              <Link href="/" className="w-full sm:w-auto">
+                <Button size="lg" className="bg-primary hover:bg-primary/90">
+                  Return to Home
+                </Button>
+              </Link>
+              <Link href="/courses" className="w-full sm:w-auto">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-primary text-primary hover:bg-primary hover:text-white"
+                >
+                  Explore More Courses
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
       </section>
-    )
+    );
   }
 
   return (
@@ -107,33 +127,34 @@ export function LeadFormSection() {
           <div className="flex flex-col justify-center space-y-6 animate-fade-in-up">
             <div className="space-y-4">
               <div className="flex flex-wrap gap-3 mb-4">
-                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full border shadow-sm animate-badge-float">
-                  <Trophy className="h-4 w-4 text-green-600" />
-                  <span className="text-xs font-medium">3 Free Trial Classes</span>
+                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-2 sm:px-3 py-1.5 rounded-full border shadow-sm animate-badge-float">
+                  <CheckCircle className="h-4 w-4 text-green-600" />
+                  <span className="text-[10px] sm:text-xs font-medium">17+ Years Experience</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full border shadow-sm animate-badge-float animation-delay-100">
+                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-2 sm:px-3 py-1.5 rounded-full border shadow-sm animate-badge-float animation-delay-100">
                   <Award className="h-4 w-4 text-primary" />
-                  <span className="text-xs font-medium">Certified Tutors</span>
+                  <span className="text-[10px] sm:text-xs font-medium">Certified Tutors</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full border shadow-sm animate-badge-float animation-delay-200">
+                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-2 sm:px-3 py-1.5 rounded-full border shadow-sm animate-badge-float animation-delay-200">
                   <Users className="h-4 w-4 text-accent" />
-                  <span className="text-xs font-medium">10,000+ Students</span>
+                  <span className="text-[10px] sm:text-xs font-medium">10,000+ Students</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full border shadow-sm animate-badge-float animation-delay-300">
+                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-2 sm:px-3 py-1.5 rounded-full border shadow-sm animate-badge-float animation-delay-300">
                   <Globe className="h-4 w-4 text-blue-600" />
-                  <span className="text-xs font-medium">Global Academy</span>
+                  <span className="text-[10px] sm:text-xs font-medium">Global Academy</span>
                 </div>
               </div>
 
               <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                <span className="block transition-all duration-700 ease-in-out bg-gradient-to-r from-gray-900 via-primary to-accent bg-clip-text text-transparent animate-gradient-x">
+                <span className="block transition-all duration-700 ease-in-out bg-gradient-to-r from-gray-900 via-primary to-accent bg-clip-text text-transparent animate-gradient-x py-5">
                   Start Your Quran Learning Journey Today
                 </span>
               </h1>
 
               <p className="max-w-[600px] text-muted-foreground md:text-xl animate-fade-in-up animation-delay-200">
-                Join thousands of families who have transformed their Islamic education with our expert tutors,
-                authentic teaching methods, and flexible online classes. Begin with 3 free trial lessons!
+                Join thousands of families who have transformed their Islamic
+                education with our expert tutors, authentic teaching methods,
+                and flexible online classes. Begin with 3 free trial lessons!
               </p>
             </div>
 
@@ -141,11 +162,15 @@ export function LeadFormSection() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-fade-in-up animation-delay-300">
               <div className="flex items-center gap-3 bg-white/60 backdrop-blur-sm rounded-lg p-3 border">
                 <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
-                <span className="text-sm font-medium">No Credit Card Required</span>
+                <span className="text-sm font-medium">
+                  No Credit Card Required
+                </span>
               </div>
               <div className="flex items-center gap-3 bg-white/60 backdrop-blur-sm rounded-lg p-3 border">
                 <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
-                <span className="text-sm font-medium">Instant Confirmation</span>
+                <span className="text-sm font-medium">
+                  Instant Confirmation
+                </span>
               </div>
               <div className="flex items-center gap-3 bg-white/60 backdrop-blur-sm rounded-lg p-3 border">
                 <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
@@ -153,7 +178,9 @@ export function LeadFormSection() {
               </div>
               <div className="flex items-center gap-3 bg-white/60 backdrop-blur-sm rounded-lg p-3 border">
                 <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
-                <span className="text-sm font-medium">Money-Back Guarantee</span>
+                <span className="text-sm font-medium">
+                  Money-Back Guarantee
+                </span>
               </div>
             </div>
 
@@ -178,25 +205,17 @@ export function LeadFormSection() {
           <div className="rounded-xl border bg-white/80 backdrop-blur-sm p-6 shadow-2xl animate-fade-in-up animation-delay-300 hover:shadow-3xl transition-all duration-500">
             <div className="flex items-center gap-2 mb-4">
               <Shield className="h-5 w-5 text-green-600" />
-              <h3 className="text-xl font-bold">Book Your Free Trial Classes</h3>
+              <h3 className="text-xl font-bold">
+                Book Your Free Trial Classes
+              </h3>
             </div>
             <p className="text-sm text-muted-foreground mb-6">
-              Fill out the form below and we'll contact you within 24 hours to schedule your personalized trial lessons.
+              Fill out the form below and we'll contact you within 24 hours to
+              schedule your personalized trial lessons.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid gap-4 sm:grid-cols-2">
-                <div className="space-y-2">
-                  <label htmlFor="parent-name" className="text-sm font-medium">
-                    Parent's Name *
-                  </label>
-                  <input
-                    id="parent-name"
-                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all hover:border-primary/50"
-                    placeholder="Enter your name"
-                    required
-                  />
-                </div>
                 <div className="space-y-2">
                   <label htmlFor="child-name" className="text-sm font-medium">
                     Student's Name *
@@ -206,6 +225,17 @@ export function LeadFormSection() {
                     className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all hover:border-primary/50"
                     placeholder="Enter student's name"
                     required
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label htmlFor="parent-name" className="text-sm font-medium">
+                    Parent's Name
+                  </label>
+                  <input
+                    id="parent-name"
+                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all hover:border-primary/50"
+                    placeholder="Enter your name"
                   />
                 </div>
               </div>
@@ -267,38 +297,29 @@ export function LeadFormSection() {
                   required
                 >
                   <option value="">Select a course</option>
-                  <option value="Quran Recitation with Tajweed">Quran Recitation with Tajweed</option>
-                  <option value="Quran Memorization (Hifz)">Quran Memorization (Hifz)</option>
-                  <option value="Arabic Language Course">Arabic Language Course</option>
-                  <option value="Noorani Qaida Course">Noorani Qaida (Beginner)</option>
-                  <option value="Online Ijazah Course">Online Ijazah Certification</option>
-                  <option value="Tajweed Mastery Course">Tajweed Mastery Course</option>
-                  <option value="Quran Tafseer Course">Quran Tafseer Course</option>
+                  <option value="Quran Recitation with Tajweed">
+                    Quran Recitation with Tajweed
+                  </option>
+                  <option value="Quran Memorization (Hifz)">
+                    Quran Memorization (Hifz)
+                  </option>
+                  <option value="Arabic Language Course">
+                    Arabic Language Course
+                  </option>
+                  <option value="Noorani Qaida Course">
+                    Noorani Qaida (Beginner)
+                  </option>
+                  <option value="Online Ijazah Course">
+                    Online Ijazah Certification
+                  </option>
+                  <option value="Tajweed Mastery Course">
+                    Tajweed Mastery Course
+                  </option>
+                  <option value="Quran Tafseer Course">
+                    Quran Tafseer Course
+                  </option>
                   <option value="Ten Qirat Course">Ten Qirat Course</option>
                   <option value="Islamic Studies">Islamic Studies</option>
-                </select>
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="timezone" className="text-sm font-medium">
-                  Preferred Time Zone *
-                </label>
-                <select
-                  id="timezone"
-                  className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all hover:border-primary/50"
-                  required
-                >
-                  <option value="">Select timezone</option>
-                  <option value="EST">Eastern Time (EST) - USA/Canada</option>
-                  <option value="CST">Central Time (CST) - USA/Canada</option>
-                  <option value="MST">Mountain Time (MST) - USA/Canada</option>
-                  <option value="PST">Pacific Time (PST) - USA/Canada</option>
-                  <option value="GMT">Greenwich Mean Time (GMT) - UK</option>
-                  <option value="CET">Central European Time (CET)</option>
-                  <option value="AEST">Australian Eastern Time (AEST)</option>
-                  <option value="ACST">Australian Central Time (ACST)</option>
-                  <option value="AWST">Australian Western Time (AWST)</option>
-                  <option value="other">Other (Please specify in comments)</option>
                 </select>
               </div>
 
@@ -340,5 +361,5 @@ export function LeadFormSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

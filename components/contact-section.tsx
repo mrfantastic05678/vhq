@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Clock } from "lucide-react"
+import Link from "next/link"
 
 export function ContactSection() {
   return (
@@ -59,7 +60,9 @@ export function ContactSection() {
                 </div>
                 <div className="space-y-1">
                   <h3 className="font-medium">WhatsApp Us</h3>
-                  <p className="text-sm text-muted-foreground">+1 (555) 123-4567</p>
+                  <Link href="https://wa.me/923357586055">
+                    <span className="text-sm text-muted-foreground">+92 335 7586055</span>
+                  </Link>
                 </div>
               </div>
               <div className="flex items-start space-x-4">

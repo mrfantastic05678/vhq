@@ -65,9 +65,11 @@ export function MobileMenu() {
           </nav>
 
           {/* Desktop CTA Button */}
-          <Button className="hidden md:flex bg-primary hover:bg-primary/90">
-            Start Free Trial
-          </Button>
+          <Link href="/enroll">
+            <Button className="hidden md:flex bg-primary hover:bg-primary/90">
+              Start Free Trial
+            </Button>
+          </Link>
 
           {/* Mobile Menu Button */}
           <Button
@@ -77,7 +79,7 @@ export function MobileMenu() {
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isOpen ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
           </Button>
         </div>
       </header>
@@ -127,7 +129,7 @@ export function MobileMenu() {
                 Contact
               </Link>
 
-              <Link href="/enroll" className="pt-4 border-t">
+              <Link href="/enroll" className="pt-8 mt-6 border-t">
                 <Button
                   className="w-full bg-primary hover:bg-primary/90"
                   onClick={closeMenu}

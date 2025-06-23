@@ -21,7 +21,7 @@ export default function Footer() {
             </p>
           </div>
           <div className="space-y-4">
-            <h3 className="text-lg font-medium">Quick Links</h3>
+            <h3 className="text-lg text-[#001948] font-semibold">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/" className="hover:underline transition-colors">
@@ -63,7 +63,7 @@ export default function Footer() {
             </ul>
           </div>
           <div className="space-y-4">
-            <h3 className="text-lg font-medium">Popular Courses</h3>
+            <h3 className="text-lg text-[#001948] font-semibold">Popular Courses</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/courses/quran-recitation" className="hover:underline transition-colors">
@@ -93,7 +93,7 @@ export default function Footer() {
             </ul>
           </div>
           <div className="space-y-4">
-            <h3 className="text-lg font-medium">Connect</h3>
+            <h3 className="text-lg text-[#001948] font-semibold">Connect</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link

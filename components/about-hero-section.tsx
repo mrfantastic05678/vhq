@@ -15,11 +15,11 @@ export function AboutHeroSection() {
                 🕌 About Our Academy
               </div>
               <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
-                <span className="bg-gradient-to-r from-gray-900 via-primary to-accent bg-clip-text text-transparent">
+                <span className="py-1 transition-all duration-700 ease-in-out bg-gradient-to-r from-gray-900 via-primary to-accent bg-clip-text text-transparent animate-gradient-x">
                   Nurturing Hearts Through
                 </span>
                 <br />
-                <span className="text-primary">Authentic Quran Education</span>
+                <span className="bg-gradient-to-b from-[#001948] to-primary bg-clip-text text-transparent">Authentic Quran Education</span>
               </h1>
               <p className="max-w-[600px] text-muted-foreground md:text-xl leading-relaxed">
                 For over 17 years, Voice of Holy Quran Academy has been a beacon of authentic Islamic education, serving

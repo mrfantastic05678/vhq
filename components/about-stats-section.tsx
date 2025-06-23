@@ -111,8 +111,7 @@ export function AboutStatsSection() {
               <h3 className="text-xl font-semibold mb-4">What These Numbers Mean</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Behind every statistic is a story of transformation, growth, and spiritual enrichment. Our 10,000+
-                students represent families who have chosen to prioritize Islamic education, our 50+ countries showcase
-                the universal appeal of authentic Quran learning, and our 17+ years of experience demonstrate our
+                students represent families who have chosen to prioritize Islamic education, and our 17+ years of experience demonstrate our
                 unwavering commitment to excellence in Islamic education.
               </p>
             </CardContent>

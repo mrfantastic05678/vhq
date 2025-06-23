@@ -79,18 +79,8 @@ export function HeroSection() {
             </div>
             <form className="space-y-4">
               <div className="grid gap-4 sm:grid-cols-2">
-                <div className="space-y-2">
-                  <label htmlFor="parent-name" className="text-sm font-medium">
-                    Parent's Name *
-                  </label>
-                  <input
-                    id="parent-name"
-                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all hover:border-primary/50"
-                    placeholder="Enter your name"
-                    required
-                  />
-                </div>
-                <div className="space-y-2">
+
+                                <div className="space-y-2">
                   <label htmlFor="child-name" className="text-sm font-medium">
                     Student's Name *
                   </label>
@@ -101,6 +91,18 @@ export function HeroSection() {
                     required
                   />
                 </div>
+
+                <div className="space-y-2">
+                  <label htmlFor="parent-name" className="text-sm font-medium">
+                    Parent's Name 
+                  </label>
+                  <input
+                    id="parent-name"
+                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all hover:border-primary/50"
+                    placeholder="Enter your name"
+                  />
+                </div>
+
               </div>
               <div className="space-y-2">
                 <label htmlFor="email" className="text-sm font-medium">
