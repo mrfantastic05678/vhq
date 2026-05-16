@@ -89,15 +89,18 @@ export function MobileMenu() {
             </Button>
           </Link>
 
-          {/* Mobile Menu Button */}
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden h-12 w-12 hover:bg-transparent"
+            className="md:hidden h-12 w-12 hover:bg-muted/50 transition-colors"
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
-            {isOpen ? <X className="h-10 w-10" /> : <Menu className="h-10 w-10" />}
+            {isOpen ? (
+              <X className="h-10 w-10 text-primary" strokeWidth={2.5} />
+            ) : (
+              <Menu className="h-10 w-10 text-primary" strokeWidth={2.5} />
+            )}
           </Button>
         </div>
       </header>
@@ -109,7 +112,7 @@ export function MobileMenu() {
             className="fixed inset-0 bg-black/60 backdrop-blur-md"
             onClick={closeMenu}
           />
-          <div className="fixed top-16 left-0 right-0 bg-background border-b shadow-2xl animate-slide-down max-h-[calc(100vh-4rem)] overflow-y-auto rounded-b-3xl">
+          <div className="fixed top-16 left-0 right-0 bg-background border-b shadow-2xl animate-slide-down max-h-[calc(100vh-4rem)] overflow-y-auto rounded-b-3xl overscroll-contain">
             <nav className="container px-6 py-8 space-y-2">
               <Link
                 href="/"
