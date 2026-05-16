@@ -1,4 +1,4 @@
-import React from 'react'
+import Link from 'next/link'
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
 import { Button } from './ui/button'
 import { ArrowRight, CheckCircle, Clock } from 'lucide-react'
@@ -84,18 +84,20 @@ const PricingCards = ({ pricingPlans }: PricingCardsProps) => {
                   ))}
                 </ul>
                 <div className="flex-grow max-h-min" />
-                <Button
-                  className={`w-full transition-all duration-300 ${
-                    plan.popular
-                      ? "bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl"
-                      : plan.premium
-                        ? "bg-accent hover:bg-accent/90 shadow-lg hover:shadow-xl"
-                        : "bg-primary/10 text-primary hover:bg-primary hover:text-white border border-primary/20"
-                  }`}
-                >
-                  Start Free Trial
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                <Link href="/enroll">
+                  <Button
+                    className={`w-full transition-all duration-300 ${
+                      plan.popular
+                        ? "bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl"
+                        : plan.premium
+                          ? "bg-accent hover:bg-accent/90 shadow-lg hover:shadow-xl"
+                          : "bg-primary/10 text-primary hover:bg-primary hover:text-white border border-primary/20"
+                    }`}
+                  >
+                    Start Free Trial
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}

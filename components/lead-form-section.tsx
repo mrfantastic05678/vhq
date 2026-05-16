@@ -119,7 +119,7 @@ export function LeadFormSection() {
   }
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-primary/5 via-secondary to-primary/10 relative overflow-hidden">
+    <section className="w-full pt-12 md:pt-16 lg:pt-20 pb-12 md:pb-24 lg:pb-32 bg-gradient-to-br from-primary/5 via-secondary to-primary/10 relative overflow-hidden">
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
       <div className="container px-4 md:px-6 relative">
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">

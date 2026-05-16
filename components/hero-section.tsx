@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Shield, CheckCircle, Award, Users, Globe, ArrowRight } from "lucide-react"
 import { useEffect, useState } from "react"
@@ -56,20 +57,24 @@ export function HeroSection() {
               </p>
             </div>
             <div className="flex flex-col gap-3 min-[400px]:flex-row animate-fade-in-up animation-delay-400">
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 animate-pulse-glow"
-              >
-                Start Free Trial
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105"
-              >
-                View Courses
-              </Button>
+              <Link href="/enroll">
+                <Button
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 animate-pulse-glow"
+                >
+                  Start Free Trial
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+              <Link href="/courses">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105"
+                >
+                  View Courses
+                </Button>
+              </Link>
             </div>
           </div>
           <div className="rounded-xl border bg-white/80 backdrop-blur-sm p-6 shadow-2xl animate-fade-in-up animation-delay-300 hover:shadow-3xl transition-all duration-500">
