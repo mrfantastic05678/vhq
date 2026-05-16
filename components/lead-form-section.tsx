@@ -24,6 +24,7 @@ export function LeadFormSection() {
   const [selectedCourse, setSelectedCourse] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   // Get course from URL parameter
   useEffect(() => {
@@ -37,15 +38,45 @@ export function LeadFormSection() {
     }
   }, [searchParams]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError("");
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    const form = e.currentTarget;
+    const formData = new FormData(form);
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+    const payload = {
+      studentName: formData.get("studentName") as string,
+      parentName: formData.get("parentName") as string,
+      email: formData.get("email") as string,
+      phone: formData.get("phone") as string,
+      age: formData.get("age") as string,
+      course: formData.get("course") as string,
+      comments: formData.get("comments") as string,
+      website_url: formData.get("website_url") as string, // Honeypot
+    };
+
+    try {
+      const res = await fetch("/api/enroll", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Something went wrong");
+      }
+
+      setIsSubmitted(true);
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Failed to submit. Please try again.";
+      setError(message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -215,6 +246,18 @@ export function LeadFormSection() {
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Honeypot field - visually hidden to catch bots */}
+              <div className="hidden" aria-hidden="true">
+                <label htmlFor="website_url">Website URL</label>
+                <input
+                  type="text"
+                  id="website_url"
+                  name="website_url"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
+
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
                   <label htmlFor="child-name" className="text-sm font-medium">
