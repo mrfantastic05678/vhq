@@ -5,6 +5,8 @@ import "./globals.css";
 import { MobileMenu } from "@/components/mobile-menu";
 import Footer from "@/components/Footer";
 
+import WhatsAppButton from "@/components/WhatsAppButton";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -20,12 +22,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
-      <MobileMenu />
-      <html lang="en">
-        <body className={inter.className}>{children}</body>
-      </html>
-      <Footer />
-    </>
+    <html lang="en">
+      <body className={inter.className}>
+        <MobileMenu />
+        {children}
+        <WhatsAppButton />
+        <Footer />
+      </body>
+    </html>
   );
 }
