@@ -13,6 +13,7 @@ export default function Footer() {
                 alt="Voice Of Holy Quran"
                 width={120}
                 height={60}
+                style={{ height: "auto" }}
               />
             </div>
             <p className="text-sm text-primary-foreground/80">

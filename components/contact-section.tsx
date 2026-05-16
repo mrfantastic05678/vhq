@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Clock } from "lucide-react"
 import Link from "next/link"
+import { WHATSAPP_URL } from "@/lib/constants"
 
 export function ContactSection() {
   return (
@@ -60,7 +61,7 @@ export function ContactSection() {
                 </div>
                 <div className="space-y-1">
                   <h3 className="font-medium">WhatsApp Us</h3>
-                  <Link href="https://wa.me/923356438721">
+                  <Link href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                     <span className="text-sm text-muted-foreground">+92 335 6438721</span>
                   </Link>
                 </div>

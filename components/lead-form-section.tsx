@@ -154,7 +154,7 @@ export function LeadFormSection() {
               <p className="max-w-[600px] text-muted-foreground md:text-xl animate-fade-in-up animation-delay-200">
                 Join thousands of families who have transformed their Islamic
                 education with our expert tutors, authentic teaching methods,
-                and flexible online classes. Begin with 3 free trial lessons!
+                and flexible online classes. Begin with free trial lessons!
               </p>
             </div>
 

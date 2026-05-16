@@ -116,7 +116,7 @@ export function CoursePricingSection() {
   const benefits = [
     {
       icon: Gift,
-      title: "3 Free Trial Lessons",
+      title: "Free Trial Lessons",
       description: "Experience our teaching quality with no commitment",
     },
     {

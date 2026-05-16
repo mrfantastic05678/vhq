@@ -28,6 +28,7 @@ export function MobileMenu() {
                 alt="Voice Of Holy Quran"
                 width={120}
                 height={60}
+                style={{ height: "auto" }}
               />
             </Link>
           </div>
