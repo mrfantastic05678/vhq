@@ -123,16 +123,37 @@ export function HeroSection() {
           </div>
           <div className="rounded-xl border bg-white/80 backdrop-blur-sm p-6 shadow-2xl animate-fade-in-up animation-delay-300 hover:shadow-3xl transition-all duration-500">
             {isSubmitted ? (
-              <div className="flex flex-col items-center justify-center text-center space-y-4 py-8">
-                <CheckCircle className="h-12 w-12 text-green-600" />
-                <h3 className="text-2xl font-bold">Enrollment Successful!</h3>
-                <p className="text-muted-foreground">
-                  Thank you! Our academic advisor will contact you within 24 hours to schedule your free trial classes.
+              <div className="flex flex-col items-center justify-center text-center space-y-4 py-4 animate-fade-in-up">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-100 mx-auto mb-2">
+                  <CheckCircle className="h-8 w-8 text-green-600" />
+                </div>
+                <h3 className="text-2xl font-bold">🎉 Enrollment Successful!</h3>
+                <p className="text-sm text-muted-foreground">
+                  Thank you for choosing Voice of Holy Quran Academy! We're excited to begin this blessed journey with you.
                 </p>
+                
+                <div className="bg-white/80 backdrop-blur-sm rounded-lg p-4 border shadow-sm w-full my-4">
+                  <h4 className="font-semibold text-sm mb-3 text-left">What happens next?</h4>
+                  <div className="space-y-3 text-left">
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary text-xs font-semibold mt-0.5">1</div>
+                      <p className="text-xs text-muted-foreground">Our advisor will contact you within 24 hours to schedule your free trial.</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary text-xs font-semibold mt-0.5">2</div>
+                      <p className="text-xs text-muted-foreground">We'll match you with the perfect tutor based on your preferences.</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary text-xs font-semibold mt-0.5">3</div>
+                      <p className="text-xs text-muted-foreground">You'll receive instructions on how to access your classes.</p>
+                    </div>
+                  </div>
+                </div>
+
                 <Button 
                   onClick={() => setIsSubmitted(false)}
                   variant="outline"
-                  className="mt-4"
+                  className="w-full mt-2"
                 >
                   Register Another Student
                 </Button>

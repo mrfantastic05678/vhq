@@ -81,7 +81,7 @@ export function LeadFormSection() {
 
   if (isSubmitted) {
     return (
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 relative overflow-hidden">
+      <section className="w-full pt-8 pb-12 md:pt-12 md:pb-24 lg:pt-16 lg:pb-32 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         <div className="container px-4 md:px-6 relative">
           <div className="max-w-2xl mx-auto text-center animate-fade-in-up">
