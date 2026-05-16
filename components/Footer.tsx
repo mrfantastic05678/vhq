@@ -17,7 +17,7 @@ export default function Footer() {
                   alt="Voice Of Holy Quran"
                   width={140}
                   height={70}
-                  style={{ height: "auto" }}
+                  style={{ width: "auto", height: "auto" }}
                 />
               </div>
             </div>

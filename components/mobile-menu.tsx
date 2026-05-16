@@ -29,29 +29,29 @@ export function MobileMenu() {
                 alt="Voice Of Holy Quran"
                 width={120}
                 height={60}
-                style={{ height: "auto" }}
+                style={{ width: "auto", height: "auto" }}
               />
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex gap-6">
+          <nav className="hidden md:flex items-center gap-6">
             <Link
               href="/"
-              className="text-sm font-medium hover:text-primary transition-colors"
+              className="text-sm font-medium hover:text-primary transition-colors py-2"
             >
               Home
             </Link>
             <Link
               href="/about"
-              className="text-sm font-medium hover:text-primary transition-colors"
+              className="text-sm font-medium hover:text-primary transition-colors py-2"
             >
               About
             </Link>
-            <div className="relative group">
+            <div className="relative group py-2">
               <Link
                 href="/courses"
-                className="flex items-center gap-1 text-sm font-medium hover:text-primary transition-colors py-2"
+                className="flex items-center gap-1 text-sm font-medium hover:text-primary transition-colors"
               >
                 Courses
                 <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
@@ -70,13 +70,13 @@ export function MobileMenu() {
             </div>
             <Link
               href="/fee"
-              className="text-sm font-medium hover:text-primary transition-colors"
+              className="text-sm font-medium hover:text-primary transition-colors py-2"
             >
               Pricing
             </Link>
             <Link
               href="/contact"
-              className="text-sm font-medium hover:text-primary transition-colors"
+              className="text-sm font-medium hover:text-primary transition-colors py-2"
             >
               Contact
             </Link>
