@@ -133,7 +133,7 @@ export function CourseHero({ course }: CourseHeroProps) {
                     <div className="text-xs text-muted-foreground">Rating</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-primary">100%</div>
+                    <div className="text-2xl font-bold text-primary">99%</div>
                     <div className="text-xs text-muted-foreground">Success</div>
                   </div>
                 </div>

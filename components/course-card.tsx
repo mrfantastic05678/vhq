@@ -12,6 +12,7 @@ interface CourseCardProps {
     image: string;
     rating: number;
     students?: number;
+    reviews?: number;
     duration?: string;
     level: string;
     badge?: string;
@@ -89,7 +90,7 @@ export function CourseCard({
                     ))}
                     {course.rating && (
                       <span className="text-yellow-400 font-semibold ml-1">
-                        {course.rating.toFixed(1)}
+                        {course.rating.toFixed(1)} {course.reviews && <span className="text-muted-foreground text-xs font-normal">({course.reviews} reviews)</span>}
                       </span>
                     )}
                   </div>
@@ -97,7 +98,7 @@ export function CourseCard({
                   {course.students && (
                     <div className="flex items-center gap-1">
                       <Users className="h-4 w-4" />
-                      <span>{course.students.toLocaleString()}+ students</span>
+                      <span>{course.students.toLocaleString()} students</span>
                     </div>
                   )}
 
@@ -179,9 +180,9 @@ export function CourseCard({
                       className="h-3 w-3 fill-yellow-400 text-yellow-400"
                     />
                   ))}
-                  {course.students && (
-                    <span className="text-xs ml-1">
-                      ({course.students.toLocaleString()})
+                  {course.reviews && (
+                    <span className="text-xs ml-1 text-muted-foreground">
+                      ({course.reviews})
                     </span>
                   )}
                 </div>
@@ -228,8 +229,8 @@ export function CourseCard({
               <div className="flex items-center gap-1">
                 <Users className="h-3 w-3" />
                 {course.students && (
-                  <span>({course.students.toLocaleString()})</span>
-                )}{" "}
+                  <span>{course.students.toLocaleString()} students</span>
+                )}
               </div>
               <div className="flex items-center gap-1">
                 <Award className="h-3 w-3" />
@@ -243,9 +244,9 @@ export function CourseCard({
                   className="h-3 w-3 fill-yellow-400 text-yellow-400"
                 />
               ))}
-              {course.students && (
-                <span className="text-xs ml-1">
-                  ({course.students.toLocaleString()})
+              {course.reviews && (
+                <span className="text-xs ml-1 text-muted-foreground">
+                  ({course.reviews} reviews)
                 </span>
               )}
             </div>

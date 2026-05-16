@@ -29,6 +29,7 @@ export function MobileMenu() {
                 alt="Voice Of Holy Quran"
                 width={120}
                 height={60}
+                priority={true}
               />
             </Link>
           </div>
@@ -92,11 +93,11 @@ export function MobileMenu() {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="md:hidden h-12 w-12 hover:bg-transparent"
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
-            {isOpen ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
+            {isOpen ? <X className="h-10 w-10" /> : <Menu className="h-10 w-10" />}
           </Button>
         </div>
       </header>
@@ -105,46 +106,39 @@ export function MobileMenu() {
       {isOpen && (
         <div className="fixed inset-0 z-40 md:hidden">
           <div
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm"
+            className="fixed inset-0 bg-black/60 backdrop-blur-md"
             onClick={closeMenu}
           />
-          <div className="fixed min-h-[calc(100vh-4rem)] top-16 left-0 right-0 bg-background border-b shadow-lg animate-slide-down">
-            <nav className="container py-6 space-y-4">
+          <div className="fixed top-16 left-0 right-0 bg-background border-b shadow-2xl animate-slide-down max-h-[calc(100vh-4rem)] overflow-y-auto rounded-b-3xl">
+            <nav className="container px-6 py-8 space-y-2">
               <Link
                 href="/"
-                className="block text-lg font-medium hover:text-primary transition-colors py-2"
+                className="block text-xl font-semibold hover:text-primary transition-colors py-3 border-b border-muted/50"
                 onClick={closeMenu}
               >
                 Home
               </Link>
               <Link
                 href="/about"
-                className="block text-lg font-medium hover:text-primary transition-colors py-2"
+                className="block text-xl font-semibold hover:text-primary transition-colors py-3 border-b border-muted/50"
                 onClick={closeMenu}
               >
-                About
+                About Us
               </Link>
-              <Link
-                href="/fee"
-                className="block text-lg font-medium hover:text-primary transition-colors py-2"
-                onClick={closeMenu}
-              >
-                Pricing Fee
-              </Link>
-              <div className="space-y-2 py-2">
+              <div className="py-4 border-b border-muted/50">
                 <Link
                   href="/courses"
-                  className="flex items-center justify-between text-lg font-medium hover:text-primary transition-colors"
+                  className="flex items-center justify-between text-xl font-semibold hover:text-primary transition-colors mb-4"
                   onClick={closeMenu}
                 >
-                  Courses
+                  Our Courses
                 </Link>
-                <div className="pl-4 space-y-2 border-l-2 border-muted mt-2">
+                <div className="grid grid-cols-1 gap-3 pl-4 border-l-2 border-primary/20">
                   {coursesData.map((course) => (
                     <Link
                       key={course.id}
                       href={`/courses/${course.slug}`}
-                      className="block text-sm text-muted-foreground hover:text-primary transition-colors py-1"
+                      className="block text-base text-muted-foreground hover:text-primary transition-colors py-1.5"
                       onClick={closeMenu}
                     >
                       {course.title}
@@ -153,22 +147,28 @@ export function MobileMenu() {
                 </div>
               </div>
               <Link
+                href="/fee"
+                className="block text-xl font-semibold hover:text-primary transition-colors py-3 border-b border-muted/50"
+                onClick={closeMenu}
+              >
+                Fee Structure
+              </Link>
+              <Link
                 href="/contact"
-                className="block text-lg font-medium hover:text-primary transition-colors py-2"
+                className="block text-xl font-semibold hover:text-primary transition-colors py-3"
                 onClick={closeMenu}
               >
                 Contact
               </Link>
+              
+              <div className="pt-6 pb-4">
+                <Link href="/enroll" onClick={closeMenu}>
+                  <Button className="w-full h-14 text-lg font-bold bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20 rounded-xl">
+                    Get Free Trial Classes
+                  </Button>
+                </Link>
+              </div>
             </nav>
-
-            <Link href="/enroll" className="pt-2 mt-6 border-t">
-              <Button
-                className="w-full bg-primary hover:bg-primary/90"
-                onClick={closeMenu}
-              >
-                Start Free Trial
-              </Button>
-            </Link>
           </div>
         </div>
       )}

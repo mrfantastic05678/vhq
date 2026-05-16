@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Shield, CheckCircle, Award, Users, Globe, ArrowRight } from "lucide-react"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 
 export function HeroSection() {
   const [currentText, setCurrentText] = useState(0)
@@ -17,13 +17,20 @@ export function HeroSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const formRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (isSubmitted && formRef.current) {
+      formRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }, [isSubmitted]);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentText((prev) => (prev + 1) % animatedTexts.length)
     }, 4000)
     return () => clearInterval(interval)
-  }, [])
+  }, [animatedTexts.length])
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -121,7 +128,7 @@ export function HeroSection() {
               </Link>
             </div>
           </div>
-          <div className="rounded-xl border bg-white/80 backdrop-blur-sm p-6 shadow-2xl animate-fade-in-up animation-delay-300 hover:shadow-3xl transition-all duration-500">
+          <div ref={formRef} className="rounded-xl border bg-white/80 backdrop-blur-sm p-6 shadow-2xl animate-fade-in-up animation-delay-300 hover:shadow-3xl transition-all duration-500">
             {isSubmitted ? (
               <div className="flex flex-col items-center justify-center text-center space-y-4 py-4 animate-fade-in-up">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-100 mx-auto mb-2">
@@ -132,9 +139,9 @@ export function HeroSection() {
                   Thank you for choosing Voice of Holy Quran Academy! We're excited to begin this blessed journey with you.
                 </p>
                 
-                <div className="bg-white/80 backdrop-blur-sm rounded-lg p-4 border shadow-sm w-full my-4">
-                  <h4 className="font-semibold text-sm mb-3 text-left">What happens next?</h4>
-                  <div className="space-y-3 text-left">
+                <div className="bg-white/80 backdrop-blur-sm rounded-lg p-4 border shadow-sm w-full my-4 text-left">
+                  <h4 className="font-semibold text-sm mb-3">What happens next?</h4>
+                  <div className="space-y-3">
                     <div className="flex items-start gap-3">
                       <div className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary text-xs font-semibold mt-0.5">1</div>
                       <p className="text-xs text-muted-foreground">Our advisor will contact you within 24 hours to schedule your free trial.</p>
@@ -169,7 +176,7 @@ export function HeroSection() {
                     {error}
                   </div>
                 )}
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-4 text-left">
                   {/* Honeypot field - visually hidden to catch bots */}
                   <div className="hidden" aria-hidden="true">
                     <label htmlFor="website_url">Website URL</label>
@@ -207,8 +214,8 @@ export function HeroSection() {
                         placeholder="Enter your name"
                       />
                     </div>
-
                   </div>
+
                   <div className="space-y-2">
                     <label htmlFor="email" className="text-sm font-medium">
                       Email Address *
@@ -222,6 +229,7 @@ export function HeroSection() {
                       required
                     />
                   </div>
+
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div className="space-y-2">
                       <label htmlFor="phone" className="text-sm font-medium">
@@ -255,6 +263,7 @@ export function HeroSection() {
                       </select>
                     </div>
                   </div>
+
                   <div className="space-y-2">
                     <label htmlFor="course" className="text-sm font-medium">
                       Interested Course *
@@ -276,6 +285,7 @@ export function HeroSection() {
                       <option value="islamic-studies">Islamic Studies</option>
                     </select>
                   </div>
+
                   <Button 
                     type="submit" 
                     disabled={isSubmitting}
@@ -295,7 +305,7 @@ export function HeroSection() {
                   </Button>
                   <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
                     <Shield className="h-3 w-3 text-green-600" />
-                    <span>No credit card required • 100% Risk-free • Instant confirmation</span>
+                    <span>No credit card required • Risk-free • Instant confirmation</span>
                   </div>
                 </form>
               </>
