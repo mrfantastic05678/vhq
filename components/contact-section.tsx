@@ -5,6 +5,7 @@ import { Clock, Shield, CheckCircle } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
 import { WHATSAPP_URL } from "@/lib/constants"
+import { trackConversion } from "@/lib/gtm"
 
 export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -42,6 +43,7 @@ export function ContactSection() {
       }
 
       setIsSubmitted(true);
+      trackConversion();
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : "Failed to send message.";
       setError(message);

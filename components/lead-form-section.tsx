@@ -16,6 +16,7 @@ import {
   Clock,
 } from "lucide-react";
 import { coursesData } from "@/lib/courses-data";
+import { trackConversion } from "@/lib/gtm";
 import Link from "next/link";
 
 export function LeadFormSection() {
@@ -77,6 +78,7 @@ export function LeadFormSection() {
       }
 
       setIsSubmitted(true);
+      trackConversion();
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : "Failed to submit. Please try again.";
       setError(message);

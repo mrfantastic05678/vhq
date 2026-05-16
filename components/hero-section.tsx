@@ -4,6 +4,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Shield, CheckCircle, Award, Users, Globe, ArrowRight } from "lucide-react"
 import { useEffect, useState, useRef } from "react"
+import { trackConversion } from "@/lib/gtm"
 
 export function HeroSection() {
   const [currentText, setCurrentText] = useState(0)
@@ -64,6 +65,7 @@ export function HeroSection() {
       }
 
       setIsSubmitted(true);
+      trackConversion();
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : "Failed to submit. Please try again.";
       setError(message);
