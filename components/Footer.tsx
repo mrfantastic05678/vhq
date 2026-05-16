@@ -16,7 +16,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-sm text-primary-foreground/80">
-              Authentic Islamic education with 17+ years of experience serving
+              Authentic Islamic education with 10+ years of experience serving
               Muslim families worldwide.
             </p>
           </div>
@@ -66,12 +66,12 @@ export default function Footer() {
             <h3 className="text-lg text-[#001948] font-semibold">Popular Courses</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/courses/quran-recitation" className="hover:underline transition-colors">
+                <Link href="/courses/quran-recitation-tajweed" className="hover:underline transition-colors">
                   Quran Recitation
                 </Link>
               </li>
               <li>
-                <Link href="/courses/tajweed-mastery" className="hover:underline transition-colors">
+                <Link href="/courses/tajweed-mastery-course" className="hover:underline transition-colors">
                   Tajweed Mastery
                 </Link>
               </li>
@@ -81,12 +81,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/courses/arabic-language" className="hover:underline transition-colors">
+                <Link href="/courses/arabic-language-course" className="hover:underline transition-colors">
                   Arabic Language
                 </Link>
               </li>
               <li>
-                <Link href="/courses/online-ijazah" className="hover:underline transition-colors">
+                <Link href="/courses/online-ijazah-course" className="hover:underline transition-colors">
                   Online Ijazah
                 </Link>
               </li>

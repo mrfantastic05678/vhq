@@ -10,7 +10,7 @@ export function HeroSection() {
     "Learn Quran with Perfect Tajweed.",
     "Master Arabic Language & Quran.",
     "Get Ijazah Certification Online.",
-    "Join 10,000+ Happy Students.",
+    "Join 500+ Happy Students.",
   ]
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export function HeroSection() {
               <div className="flex flex-wrap gap-3 mb-4">
                 <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-2 sm:px-3 py-1.5 rounded-full border shadow-sm animate-badge-float">
                   <CheckCircle className="h-4 w-4 text-green-600" />
-                  <span className="text-[10px] sm:text-xs font-medium">17+ Years Experience</span>
+                  <span className="text-[10px] sm:text-xs font-medium">10+ Years Experience</span>
                 </div>
                 <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-2 sm:px-3 py-1.5 rounded-full border shadow-sm animate-badge-float animation-delay-100">
                   <Award className="h-4 w-4 text-primary" />
@@ -38,7 +38,7 @@ export function HeroSection() {
                 </div>
                 <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-2 sm:px-3 py-1.5 rounded-full border shadow-sm animate-badge-float animation-delay-200">
                   <Users className="h-4 w-4 text-accent" />
-                  <span className="text-[10px] sm:text-xs font-medium">10,000+ Students</span>
+                  <span className="text-[10px] sm:text-xs font-medium">500+ Students</span>
                 </div>
                 <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-2 sm:px-3 py-1.5 rounded-full border shadow-sm animate-badge-float animation-delay-300">
                   <Globe className="h-4 w-4 text-blue-600" />
@@ -60,7 +60,7 @@ export function HeroSection() {
                 size="lg"
                 className="bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 animate-pulse-glow"
               >
-                Start 3-Day Free Trial
+                Start Free Trial
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button

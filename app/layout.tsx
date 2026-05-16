@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Voice of Holy Quran - Learn Quran with Tajweed Online",
   description:
-    "Learn Quran with Tajweed at Voice of Holy Quran Academy! 17+ years experience, certified tutors, flexible plans, affordable monthly fees. Join 10,000+ students worldwide.",
+    "Learn Quran with Tajweed at Voice of Holy Quran Academy! 10+ years experience, certified tutors, flexible plans, affordable monthly fees. Join 500+ students worldwide.",
   generator: "v0.dev",
 };
 

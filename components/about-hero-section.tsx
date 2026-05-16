@@ -30,11 +30,11 @@ export function AboutHeroSection() {
 
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-center">
               <div className="bg-white/80 backdrop-blur-sm rounded-lg p-4 border shadow-sm">
-                <div className="text-2xl font-bold text-primary">17+</div>
+                <div className="text-2xl font-bold text-primary">10+</div>
                 <div className="text-sm text-muted-foreground">Years Experience</div>
               </div>
               <div className="bg-white/80 backdrop-blur-sm rounded-lg p-4 border shadow-sm">
-                <div className="text-2xl font-bold text-primary">10K+</div>
+                <div className="text-2xl font-bold text-primary">500+</div>
                 <div className="text-sm text-muted-foreground">Students Taught</div>
               </div>
               <div className="bg-white/80 backdrop-blur-sm rounded-lg p-4 border shadow-sm">

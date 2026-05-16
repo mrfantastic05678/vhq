@@ -129,7 +129,7 @@ export function LeadFormSection() {
               <div className="flex flex-wrap gap-3 mb-4">
                 <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-2 sm:px-3 py-1.5 rounded-full border shadow-sm animate-badge-float">
                   <CheckCircle className="h-4 w-4 text-green-600" />
-                  <span className="text-[10px] sm:text-xs font-medium">17+ Years Experience</span>
+                  <span className="text-[10px] sm:text-xs font-medium">10+ Years Experience</span>
                 </div>
                 <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-2 sm:px-3 py-1.5 rounded-full border shadow-sm animate-badge-float animation-delay-100">
                   <Award className="h-4 w-4 text-primary" />
@@ -137,7 +137,7 @@ export function LeadFormSection() {
                 </div>
                 <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-2 sm:px-3 py-1.5 rounded-full border shadow-sm animate-badge-float animation-delay-200">
                   <Users className="h-4 w-4 text-accent" />
-                  <span className="text-[10px] sm:text-xs font-medium">10,000+ Students</span>
+                  <span className="text-[10px] sm:text-xs font-medium">500+ Students</span>
                 </div>
                 <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-2 sm:px-3 py-1.5 rounded-full border shadow-sm animate-badge-float animation-delay-300">
                   <Globe className="h-4 w-4 text-blue-600" />
@@ -192,11 +192,11 @@ export function LeadFormSection() {
               </div>
               <div className="flex items-center gap-2">
                 <Users className="h-4 w-4 text-primary" />
-                <span>10,000+ Happy Students</span>
+                <span>500+ Happy Students</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4 text-green-600" />
-                <span>17+ Years Experience</span>
+                <span>10+ Years Experience</span>
               </div>
             </div>
           </div>

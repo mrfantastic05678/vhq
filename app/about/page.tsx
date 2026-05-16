@@ -11,7 +11,7 @@ import { ContactSection } from "@/components/contact-section"
 export const metadata: Metadata = {
   title: "About Us - Voice of Holy Quran Academy",
   description:
-    "Learn about Voice of Holy Quran Academy's 17+ years of experience in Islamic education. Meet our certified tutors, discover our mission, and see why 10,000+ families trust us worldwide.",
+    "Learn about Voice of Holy Quran Academy's 10+ years of experience in Islamic education. Meet our certified tutors, discover our mission, and see why 500+ families trust us worldwide.",
   keywords:
     "About Voice of Holy Quran, Islamic education, Quran academy, certified tutors, online Quran learning, Muslim education",
 }

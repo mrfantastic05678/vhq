@@ -39,7 +39,7 @@ export function FeaturesSection() {
     },
     {
       icon: Globe,
-      title: "17+ Years Experience",
+      title: "10+ Years Experience",
       description: "Trusted international institute serving students across the globe.",
     },
   ]

@@ -4,11 +4,6 @@ import { ChevronDown } from "lucide-react"
 export function FAQSection() {
   const faqs = [
     {
-      question: "How does the 3-day free trial work?",
-      answer:
-        "You can book 3 trial classes with our qualified tutors at no cost. If you're not satisfied, there's no obligation to continue. We believe in the quality of our teaching and want you to experience it firsthand.",
-    },
-    {
       question: "Are your tutors qualified and certified?",
       answer:
         "Yes, all our tutors are certified with Ijazah in Quran recitation and have extensive teaching experience. They undergo a rigorous selection process and regular training to maintain high teaching standards.",

@@ -80,7 +80,7 @@ export function AboutStorySection() {
                   <div>
                     <h3 className="font-semibold text-lg mb-2">Proven Excellence</h3>
                     <p className="text-sm text-muted-foreground">
-                      17+ years of consistent excellence, with thousands of successful graduates who have gone on to
+                      10+ years of consistent excellence, with thousands of successful graduates who have gone on to
                       become teachers, scholars, and community leaders.
                     </p>
                   </div>

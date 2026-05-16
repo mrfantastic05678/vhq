@@ -19,7 +19,7 @@ const CtaSection = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/enroll">
               <Button size="lg" className="bg-primary hover:bg-primary/90">
-                Start 3-Day Free Trial
+                Start Free Trial
               </Button>
             </Link>
             <Link href="/contact">

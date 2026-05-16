@@ -4,7 +4,7 @@ import { CourseHero } from "@/components/course-hero";
 import { CourseCard } from "@/components/course-card";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { getCourseBySlug, getRelatedCourses } from "@/lib/courses-data";
+import { getCourseBySlug, getRelatedCourses, coursesData } from "@/lib/courses-data";
 import {
   CheckCircle,
   Clock,
@@ -19,15 +19,22 @@ import {
 import { CoursePricingSection } from "@/components/CoursePricing";
 
 interface CoursePageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
+}
+
+export function generateStaticParams() {
+  return coursesData.map((course) => ({
+    slug: course.slug,
+  }));
 }
 
 export async function generateMetadata({
   params,
 }: CoursePageProps): Promise<Metadata> {
-  const course = getCourseBySlug(params.slug);
+  const { slug } = await params;
+  const course = getCourseBySlug(slug);
 
   if (!course) {
     return {
@@ -47,8 +54,9 @@ export async function generateMetadata({
   };
 }
 
-export default function CoursePage({ params }: CoursePageProps) {
-  const course = getCourseBySlug(params.slug);
+export default async function CoursePage({ params }: CoursePageProps) {
+  const { slug } = await params;
+  const course = getCourseBySlug(slug);
 
   if (!course) {
     notFound();
@@ -198,7 +206,7 @@ export default function CoursePage({ params }: CoursePageProps) {
 
                       <div className="space-y-3">
                         <Button className="w-full bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300">
-                          Start 3-Day Free Trial
+                          Start Free Trial
                           <ArrowRight className="ml-2 h-4 w-4" />
                         </Button>
                         <Button
@@ -212,7 +220,7 @@ export default function CoursePage({ params }: CoursePageProps) {
                       <div className="space-y-2 text-sm">
                         <div className="flex items-center gap-2">
                           <Shield className="h-4 w-4 text-green-600" />
-                          <span>3-day money-back guarantee</span>
+                          <span>Money-back guarantee</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <Globe className="h-4 w-4 text-blue-600" />

@@ -5,7 +5,7 @@ export function AboutStatsSection() {
   const stats = [
     {
       icon: Users,
-      number: "10,000+",
+      number: "500+",
       label: "Students Taught",
       description: "Happy families worldwide",
       color: "text-blue-600",
@@ -21,7 +21,7 @@ export function AboutStatsSection() {
     // },
     {
       icon: Clock,
-      number: "17+",
+      number: "10+",
       label: "Years Experience",
       description: "Proven track record",
       color: "text-purple-600",
@@ -110,8 +110,8 @@ export function AboutStatsSection() {
             <CardContent className="p-8">
               <h3 className="text-xl font-semibold mb-4">What These Numbers Mean</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Behind every statistic is a story of transformation, growth, and spiritual enrichment. Our 10,000+
-                students represent families who have chosen to prioritize Islamic education, and our 17+ years of experience demonstrate our
+                Behind every statistic is a story of transformation, growth, and spiritual enrichment. Our 500+
+                students represent families who have chosen to prioritize Islamic education, and our 10+ years of experience demonstrate our
                 unwavering commitment to excellence in Islamic education.
               </p>
             </CardContent>
