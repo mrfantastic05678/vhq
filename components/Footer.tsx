@@ -1,185 +1,138 @@
 import Link from "next/link";
 import Image from "next/image";
+import { MessageCircle, Facebook, Instagram } from "lucide-react";
+import { WHATSAPP_URL } from "@/lib/constants";
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t bg-primary text-white py-12">
+    <footer className="w-full border-t border-slate-800 bg-gradient-to-b from-[#001948] to-[#000d26] text-slate-300 pt-12 md:pt-16 pb-6 md:pb-8">
       <div className="container px-4 md:px-6">
-        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
-          <div className="space-y-4">
+        <div className="grid gap-12 sm:grid-cols-2 md:grid-cols-3">
+          <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <Image
-                src="/logo.webp"
-                alt="Voice Of Holy Quran"
-                width={120}
-                height={60}
-                style={{ height: "auto" }}
-              />
+              <div className="bg-white/95 p-2 rounded-xl inline-block shadow-lg">
+                <Image
+                  src="/logo.webp"
+                  alt="Voice Of Holy Quran"
+                  width={140}
+                  height={70}
+                  style={{ height: "auto" }}
+                />
+              </div>
             </div>
-            <p className="text-sm text-primary-foreground/80">
-              Authentic Islamic education with 10+ years of experience serving
-              Muslim families worldwide.
+            <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
+              Providing authentic Islamic education with over 10 years of experience. We are dedicated to helping Muslim families worldwide connect with the Holy Quran.
             </p>
           </div>
-          <div className="space-y-4">
-            <h3 className="text-lg text-[#001948] font-semibold">Quick Links</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/" className="hover:underline transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/about"
-                  className="hover:underline transition-colors"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/fee"
-                  className="hover:underline transition-colors"
-                >
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/courses"
-                  className="hover:underline transition-colors"
-                >
-                  Courses
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="hover:underline transition-colors"
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
+          
+          <div className="grid grid-cols-2 gap-8 md:gap-12">
+            <div className="space-y-4">
+              <h3 className="text-lg font-bold text-white tracking-tight">Explore</h3>
+              <ul className="space-y-3 text-sm">
+                <li>
+                  <Link href="/" className="text-slate-400 hover:text-white transition-colors">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about" className="text-slate-400 hover:text-white transition-colors">
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/courses" className="text-slate-400 hover:text-white transition-colors">
+                    Our Courses
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/fee" className="text-slate-400 hover:text-white transition-colors">
+                    Fee Structure
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="text-slate-400 hover:text-white transition-colors">
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div className="space-y-4">
+              <h3 className="text-lg font-bold text-white tracking-tight">Courses</h3>
+              <ul className="space-y-3 text-sm">
+                <li>
+                  <Link href="/courses/quran-recitation-tajweed" className="text-slate-400 hover:text-white transition-colors">
+                    Tajweed
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/courses/quran-memorization-hifz" className="text-slate-400 hover:text-white transition-colors">
+                    Hifz
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/courses/arabic-language-course" className="text-slate-400 hover:text-white transition-colors">
+                    Arabic
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/courses/noorani-qaida-course" className="text-slate-400 hover:text-white transition-colors">
+                    Qaida
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div className="space-y-4">
-            <h3 className="text-lg text-[#001948] font-semibold">Popular Courses</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/courses/quran-recitation-tajweed" className="hover:underline transition-colors">
-                  Quran Recitation
-                </Link>
-              </li>
-              <li>
-                <Link href="/courses/tajweed-mastery-course" className="hover:underline transition-colors">
-                  Tajweed Mastery
-                </Link>
-              </li>
-              <li>
-                <Link href="/courses/quran-memorization-hifz" className="hover:underline transition-colors">
-                  Quran Memorization
-                </Link>
-              </li>
-              <li>
-                <Link href="/courses/arabic-language-course" className="hover:underline transition-colors">
-                  Arabic Language
-                </Link>
-              </li>
-              <li>
-                <Link href="/courses/online-ijazah-course" className="hover:underline transition-colors">
-                  Online Ijazah
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="space-y-4">
-            <h3 className="text-lg text-[#001948] font-semibold">Connect</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  href="#"
-                  className="flex items-center hover:underline transition-colors"
+
+          <div className="space-y-6">
+            <h3 className="text-lg font-bold text-white tracking-tight">Contact Us</h3>
+            <div className="space-y-4 text-sm">
+              <Link 
+                href={WHATSAPP_URL} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors group"
+              >
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 group-hover:bg-white/20 text-white transition-colors">
+                  <MessageCircle className="h-4 w-4" />
+                </div>
+                <span>+92 335 6438721</span>
+              </Link>
+            </div>
+            
+            <div className="pt-4">
+              <h3 className="text-lg font-bold text-white tracking-tight mb-4">Follow Us</h3>
+              <div className="flex items-center gap-4">
+                <Link 
+                  href="https://www.facebook.com/voiceholyquran" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-[#1877F2] text-white transition-all duration-300 hover:scale-110 shadow-sm"
+                  aria-label="Facebook"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="mr-2 h-4 w-4"
-                  >
-                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                  </svg>
-                  Facebook
+                  <Facebook className="h-5 w-5" />
                 </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="flex items-center hover:underline transition-colors"
+                <Link 
+                  href="https://www.instagram.com/quranvoiceofholy/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] text-white transition-all duration-300 hover:scale-110 shadow-sm"
+                  aria-label="Instagram"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="mr-2 h-4 w-4"
-                  >
-                    <rect
-                      width="20"
-                      height="20"
-                      x="2"
-                      y="2"
-                      rx="5"
-                      ry="5"
-                    ></rect>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
-                  </svg>
-                  Instagram
+                  <Instagram className="h-5 w-5" />
                 </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="flex items-center hover:underline transition-colors"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="mr-2 h-4 w-4"
-                  >
-                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
-                  </svg>
-                  Twitter
-                </Link>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="mt-8 border-t border-primary-foreground/20 pt-8 text-center text-sm">
+        
+        <div className="mt-12 border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
           <p>
-            © {new Date().getFullYear()} Voice of Holy Quran Academy. All rights
-            reserved. | Serving Muslim families worldwide with authentic Islamic
-            education.
+            © {new Date().getFullYear()} Voice of Holy Quran Academy. All rights reserved.
           </p>
+          <div className="flex gap-6">
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+          </div>
         </div>
       </div>
     </footer>
