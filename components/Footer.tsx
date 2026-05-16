@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { MessageCircle, Facebook, Instagram } from "lucide-react";
 import { WHATSAPP_URL } from "@/lib/constants";
+import { coursesData } from "@/lib/courses-data";
 
 export default function Footer() {
   return (
@@ -59,26 +60,13 @@ export default function Footer() {
             <div className="space-y-4">
               <h3 className="text-lg font-bold text-white tracking-tight">Courses</h3>
               <ul className="space-y-3 text-sm">
-                <li>
-                  <Link href="/courses/quran-recitation-tajweed" className="text-slate-400 hover:text-white transition-colors">
-                    Tajweed
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/courses/quran-memorization-hifz" className="text-slate-400 hover:text-white transition-colors">
-                    Hifz
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/courses/arabic-language-course" className="text-slate-400 hover:text-white transition-colors">
-                    Arabic
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/courses/noorani-qaida-course" className="text-slate-400 hover:text-white transition-colors">
-                    Qaida
-                  </Link>
-                </li>
+                {coursesData.map((course) => (
+                  <li key={course.id}>
+                    <Link href={`/courses/${course.slug}`} className="text-slate-400 hover:text-white transition-colors">
+                      {course.title}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

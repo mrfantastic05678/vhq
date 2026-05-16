@@ -3,8 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import Image from "next/image";
+import { coursesData } from "@/lib/courses-data";
 
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,12 +48,26 @@ export function MobileMenu() {
             >
               About
             </Link>
-            <Link
-              href="/courses"
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
-              Courses
-            </Link>
+            <div className="relative group">
+              <Link
+                href="/courses"
+                className="flex items-center gap-1 text-sm font-medium hover:text-primary transition-colors py-2"
+              >
+                Courses
+                <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
+              </Link>
+              <div className="absolute left-0 top-full hidden w-[250px] flex-col rounded-md border bg-background p-2 shadow-md group-hover:flex animate-fade-in-up">
+                {coursesData.map((course) => (
+                  <Link
+                    key={course.id}
+                    href={`/courses/${course.slug}`}
+                    className="block rounded-sm px-3 py-2 text-sm hover:bg-muted transition-colors"
+                  >
+                    {course.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
             <Link
               href="/fee"
               className="text-sm font-medium hover:text-primary transition-colors"
@@ -117,13 +132,27 @@ export function MobileMenu() {
               >
                 Pricing Fee
               </Link>
-              <Link
-                href="/courses"
-                className="block text-lg font-medium hover:text-primary transition-colors py-2"
-                onClick={closeMenu}
-              >
-                Courses
-              </Link>
+              <div className="space-y-2 py-2">
+                <Link
+                  href="/courses"
+                  className="flex items-center justify-between text-lg font-medium hover:text-primary transition-colors"
+                  onClick={closeMenu}
+                >
+                  Courses
+                </Link>
+                <div className="pl-4 space-y-2 border-l-2 border-muted mt-2">
+                  {coursesData.map((course) => (
+                    <Link
+                      key={course.id}
+                      href={`/courses/${course.slug}`}
+                      className="block text-sm text-muted-foreground hover:text-primary transition-colors py-1"
+                      onClick={closeMenu}
+                    >
+                      {course.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
               <Link
                 href="/contact"
                 className="block text-lg font-medium hover:text-primary transition-colors py-2"
