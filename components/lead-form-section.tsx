@@ -245,6 +245,12 @@ export function LeadFormSection() {
               schedule your personalized trial lessons.
             </p>
 
+            {error && (
+              <div className="mb-4 p-3 bg-red-50 text-red-600 text-sm rounded-md border border-red-200">
+                {error}
+              </div>
+            )}
+
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Honeypot field - visually hidden to catch bots */}
               <div className="hidden" aria-hidden="true">
@@ -265,6 +271,7 @@ export function LeadFormSection() {
                   </label>
                   <input
                     id="child-name"
+                    name="studentName"
                     className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all hover:border-primary/50"
                     placeholder="Enter student's name"
                     required
@@ -277,6 +284,7 @@ export function LeadFormSection() {
                   </label>
                   <input
                     id="parent-name"
+                    name="parentName"
                     className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all hover:border-primary/50"
                     placeholder="Enter your name"
                   />
@@ -289,6 +297,7 @@ export function LeadFormSection() {
                 </label>
                 <input
                   id="email"
+                  name="email"
                   type="email"
                   className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all hover:border-primary/50"
                   placeholder="Enter your email"
@@ -303,6 +312,7 @@ export function LeadFormSection() {
                   </label>
                   <input
                     id="phone"
+                    name="phone"
                     type="tel"
                     className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all hover:border-primary/50"
                     placeholder="+1 (555) 000-0000"
@@ -315,6 +325,7 @@ export function LeadFormSection() {
                   </label>
                   <select
                     id="age"
+                    name="age"
                     className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all hover:border-primary/50"
                     required
                   >
@@ -334,6 +345,7 @@ export function LeadFormSection() {
                 </label>
                 <select
                   id="course"
+                  name="course"
                   value={selectedCourse}
                   onChange={(e) => setSelectedCourse(e.target.value)}
                   className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all hover:border-primary/50"
@@ -372,6 +384,7 @@ export function LeadFormSection() {
                 </label>
                 <textarea
                   id="comments"
+                  name="comments"
                   className="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all hover:border-primary/50"
                   placeholder="Any specific requirements or questions?"
                 />
