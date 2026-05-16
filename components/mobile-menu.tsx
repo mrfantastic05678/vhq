@@ -164,7 +164,7 @@ export function MobileMenu() {
                 Contact
               </Link>
               
-              <div className="pt-6 pb-4">
+              <div className="pt-6 pb-12">
                 <Link href="/enroll" onClick={closeMenu}>
                   <Button className="w-full h-14 text-lg font-bold bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20 rounded-xl">
                     Get Free Trial Classes
