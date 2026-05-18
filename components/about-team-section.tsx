@@ -96,7 +96,7 @@ export function AboutTeamSection() {
             <Card key={index} className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-105">
               <CardContent className="p-0">
                 <div className="relative h-64 overflow-hidden">
-                  <Image src={member.image || "/placeholder.svg"} alt={member.name} fill className="object-cover" />
+                  <Image src={member.image || "/placeholder.svg"} alt={member.name} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-4 text-white">
                     <h3 className="text-xl font-bold">{member.name}</h3>

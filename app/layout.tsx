@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   description:
     "Learn Quran with Tajweed at Voice of Holy Quran Academy! 10+ years experience, certified tutors, flexible plans, affordable monthly fees. Join 500+ students worldwide.",
   generator: "v0.dev",
+  metadataBase: new URL("https://voiceofholyquran.com"),
 };
 
 export default function RootLayout({

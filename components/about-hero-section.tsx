@@ -71,6 +71,7 @@ export function AboutHeroSection() {
                 src="/Voice of Holy Quran.png"
                 alt="Voice of Holy Quran Academy"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
                 priority
               />
