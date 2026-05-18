@@ -1,11 +1,10 @@
 import type React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Script from "next/script";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { MobileMenu } from "@/components/mobile-menu";
 import Footer from "@/components/Footer";
-
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -29,21 +28,9 @@ export default function RootLayout({
         {children}
         <WhatsAppButton />
         <Footer />
-        {/* Google Ads tag — must be in body, not head, for afterInteractive to work */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ADS_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="gtag-config" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            window.gtag = function(){window.dataLayer.push(arguments);}
-            window.gtag('js', new Date());
-            window.gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ADS_ID}');
-            console.log('[gtag] initialized with ID: ${process.env.NEXT_PUBLIC_GOOGLE_ADS_ID}');
-          `}
-        </Script>
       </body>
+      {/* @next/third-parties handles script loading timing, hydration, and dataLayer correctly */}
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ADS_ID!} />
     </html>
   );
 }
