@@ -82,7 +82,7 @@ export default function Footer() {
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 group-hover:bg-white/20 text-white transition-colors">
                   <MessageCircle className="h-4 w-4" />
                 </div>
-                <span>+92 335 6438721</span>
+                <span>+92 335 7586055</span>
               </Link>
             </div>
             

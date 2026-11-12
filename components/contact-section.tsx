@@ -88,7 +88,7 @@ export function ContactSection() {
                 <div className="space-y-1">
                   <h3 className="font-medium">WhatsApp Us</h3>
                   <Link href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                    <span className="text-sm text-muted-foreground">+92 335 6438721</span>
+                    <span className="text-sm text-muted-foreground">+92 335 7586055</span>
                   </Link>
                 </div>
               </div>
